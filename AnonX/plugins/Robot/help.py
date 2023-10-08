@@ -20,7 +20,7 @@ HELP_COMMAND = get_command("HELP_COMMAND")
 
 
 @app.on_message(
-    filters.command(HELP_COMMAND)
+    filters.command(["help", "helpp", "helpme"]) | filters.command(["اوامر","مساعده","ميوزك"],prefixes= ["/",""])
     & filters.private
     & ~filters.edited
     & ~BANNED_USERS
@@ -66,7 +66,7 @@ async def helper_private(
 
 
 @app.on_message(
-    filters.command(HELP_COMMAND)
+    filters.command(["help", "helpp", "helpme"]) | filters.command(["اوامر","مساعده","ميوزك"],prefixes= ["/",""])
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
