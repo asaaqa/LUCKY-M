@@ -31,7 +31,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 
 @app.on_message(
-    filters.command(PLAY_COMMAND)
+    filters.command(["play", "غني", "غنيلي"]) | filters.command(["تشغيل","شغل","شغلي"],prefixes= ["/", ""])
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
